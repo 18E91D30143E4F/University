@@ -2,9 +2,10 @@
 
 #include "Student.h"
 
-Student::Student(std::string fullName, std::string fukultetName, int yearOfBirth) {
+Student::Student() { }
+
+Student::Student(std::string fullName, std::string fukultetName, int yearOfBirth) : Fakultet(fukultetName) {
 	Student::fullName = fullName;
-	setFacultetName(fukultetName);
 	Student::yearOfBirth = yearOfBirth;
 
 	Student::marksCount = 0;

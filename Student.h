@@ -7,6 +7,7 @@
 
 class Student : public Fakultet {
 public:
+	Student();
 	Student(std::string fullName, std::string fukultetName, int yearOfBirth);
 	~Student();
 	void setFullName(std::string fullName);
