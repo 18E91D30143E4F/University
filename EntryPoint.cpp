@@ -20,6 +20,10 @@ void printStudentInfo(Student* student) {
 	std::cout << "Средний балл: " << student->getAverageMark() << "\n\n";
 }
 
+void printStudentAverageMark(Student* student) {
+	std::cout << "Студент: " << student->getFullName() << " Средний балл: " << student->getAverageMark() << std::endl;
+}
+
 int main()
 {
 	setlocale(LC_ALL, "Russian");
@@ -39,21 +43,19 @@ int main()
 	students[3] = new Student("Кайратона Ирина Нурсултанона", "ФКСИС", 2000);
 	students[3]->setMarks(new int[] {5, 4, 9, 9}, 4);
 
-	for (auto stud : students) {
-		printStudentInfo(stud);
-	}
+	for (auto stud : students) printStudentInfo(stud);
 
 	std::cout << "Студенты отсортированные по убыванию отметок: " << std::endl;
 	std::sort(students.begin(), students.end(), [](Student* a, Student* b) {
 		return a->getAverageMark() > b->getAverageMark();
 		});
-	for (auto stud : students) {
-		printStudentInfo(stud);
-	}
+	for (auto stud : students) printStudentInfo(stud);
 
-	for (auto stud : students) {
-		delete stud;
-	}
+	std::cout << "Средние отметки студентов:" << std::endl;
+	for (auto stud : students) printStudentAverageMark(stud); std::cout << std::endl;
+
+
+	for (auto stud : students) delete stud;
 
 	return 0;
 }
